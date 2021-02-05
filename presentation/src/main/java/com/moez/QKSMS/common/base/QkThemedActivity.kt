@@ -42,6 +42,7 @@ import com.uber.autodispose.autoDisposable
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.Observables
+import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
 import java.util.concurrent.TimeUnit
@@ -73,6 +74,7 @@ abstract class QkThemedActivity : QkActivity() {
      */
     val theme: Observable<Colors.Theme> = threadId
             .distinctUntilChanged()
+            .observeOn(Schedulers.io())
             .switchMap { threadId ->
                 val conversation = conversationRepo.getConversation(threadId)
                 when {

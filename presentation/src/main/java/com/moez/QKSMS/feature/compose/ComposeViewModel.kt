@@ -413,6 +413,7 @@ class ComposeViewModel @Inject constructor(
 
         // Retry sending
         view.messageClickIntent
+                .observeOn(Schedulers.io())
                 .mapNotNull(messageRepo::getMessage)
                 .filter { message -> message.isFailedMessage() }
                 .doOnNext { message -> retrySending.execute(message.id) }

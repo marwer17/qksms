@@ -76,6 +76,7 @@ class QKApplication : Application(), HasActivityInjector, HasBroadcastReceiverIn
 
         Realm.init(this)
         Realm.setDefaultConfiguration(RealmConfiguration.Builder()
+                .allowQueriesOnUiThread(false)
                 .compactOnLaunch()
                 .migration(realmMigration)
                 .schemaVersion(QkRealmMigration.SchemaVersion)
