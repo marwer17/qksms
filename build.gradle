@@ -22,9 +22,10 @@ buildscript {
     ext.mockito_version = '2.18.3'
     ext.moshi_version = '1.8.0'
     ext.okhttp3_version = '4.1.0'
-    ext.realm_version = '5.8.0'
     ext.realm_adapters_version = '3.1.0'
+    ext.realm_gradle_plugin_version = '5.13.1'
     ext.rxandroid_version = '2.0.1'
+    ext.realm_version = '5.8.0'
     ext.rxdogtag_version = '0.2.0'
     ext.rxbinding_version = '2.0.0'
     ext.rxjava_version = '2.1.4'
@@ -45,7 +46,7 @@ buildscript {
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.4.1'
         classpath 'com.google.gms:google-services:4.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "io.realm:realm-gradle-plugin:$realm_version"
+        classpath "io.realm:realm-gradle-plugin:$realm_gradle_plugin_version"
     }
 }
 
